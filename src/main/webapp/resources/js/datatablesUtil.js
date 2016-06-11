@@ -4,11 +4,6 @@
 var form;
 function makeEditable(){
     form=$("#detailsForm");
-    var homePage=location.protocol + '//' + location.host + '/';
-
-    form.submit(function(){
-        //window.location.replace(homePage);
-    })
 }
 
 function add() {
@@ -57,18 +52,6 @@ function renderDeleteBtn(data, type, row) {
     return data;
 }
 
-function save(){
-    /*console.log(form.serialize());
-    $.ajax({
-        "url":"ajax/save",
-        "type":"POST",
-        "contentType": "application/json; charset=utf-8",
-        "data":form.serialize(),
-        "success":function(){
-            $('#editRow').modal("hide");
-        }
-    })*/
-}
 
 function clearForm(){
     form.find("input, textarea").val("");
