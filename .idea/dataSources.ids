@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="PostgreSQL" uuid="9a642a5a-737a-4679-8b53-e4a80b9f0523">
+    <database-info product="PostgreSQL" version="9.4.7" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+    <schema name="public" catalog="d545dq6g3mjv9b"/>
+    <table name="categories" schema="public" catalog="d545dq6g3mjv9b" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnY2F0ZWdvcmllc19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
+      <column name="name" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="categories_pkey" columns="id"/>
+      <exported-key name="news_categories_category_id_fkey" table="news_categories" schema="public" catalog="d545dq6g3mjv9b" columns="category_id"/>
+    </table>
+    <table name="categories_id_seq" schema="public" catalog="d545dq6g3mjv9b" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+    <table name="news" schema="public" catalog="d545dq6g3mjv9b" type="TABLE">
+      <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbmV3c19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
+      <column name="headline" sqlType="varchar" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="content" sqlType="varchar" precision="500" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91" def="bm93KCk="/>
+      <primary-key name="news_pkey" columns="id"/>
+      <exported-key name="news_categories_news_id_fkey" table="news_categories" schema="public" catalog="d545dq6g3mjv9b" columns="news_id"/>
+    </table>
+    <table name="news_categories" schema="public" catalog="d545dq6g3mjv9b" type="TABLE">
+      <column name="news_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="category_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <foreign-key name="news_categories_category_id_fkey" columns="category_id" ref-table="categories" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="news_categories_news_id_fkey" columns="news_id" ref-table="news" ref-schema="public" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="news_id_seq" schema="public" catalog="d545dq6g3mjv9b" type="SEQUENCE">
+      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+    </table>
+  </data-source>
+</component>
